@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>tlnovelas tv</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root {
+      --color-primario: #6c01e5;
+      --color-secundario: #22d8ce;
+      --color-blanco: #ffffff;
+      --fuente: 'Poppins', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: var(--fuente);
+    }
+
+    body {
+      background-color: var(--color-secundario);
+      color: var(--color-blanco);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: var(--color-primario);
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+    }
+
+    header img {
+      height: 40px;
+    }
+
+    .menu-icon {
+      font-size: 24px;
+      color: var(--color-blanco);
+      cursor: pointer;
+    }
+
+    /* MENÚ LATERAL */
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: var(--color-primario);
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      padding: 40px 20px;
+      transition: right 0.3s ease;
+      z-index: 9;
+    }
+
+    .side-menu.active {
+      right: 0;
+    }
+
+    .side-menu a {
+      color: var(--color-blanco);
+      text-decoration: none;
+      margin: 15px 0;
+      font-size: 1.1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 10px;
+    }
+
+    .container {
+      padding: 20px;
+      flex: 1;
+    }
+
+    h1 {
+      color: var(--color-blanco);
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #f0f0f0;
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .btn {
+      background-color: transparent;
+      border: 2px solid var(--color-blanco);
+      color: var(--color-blanco);
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 30px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--color-blanco);
+      color: var(--color-primario);
+    }
+
+    /* BOTÓN TELEGRAM ANIMADO */
+    .telegram-btn {
+      background-color: var(--color-blanco);
+      color: var(--color-primario);
+      animation: pulse 1.5s infinite;
+    }
+
+    .telegram-btn:hover {
+      background-color: var(--color-primario);
+      color: var(--color-blanco);
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 1, 187, 0.6);
+      }
+      70% {
+        box-shadow: 0 0 0 15px rgba(255, 1, 187, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 1, 187, 0);
+      }
+    }
+
+    .image-section {
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .image-section img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .footer-wave {
+      width: 100%;
+      margin-top: auto;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        max-width: 500px;
+        margin: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgUh1CXeYbYwQS5GylDrAouk-lRJ4ZaFLeXRUoUEADenuIU9W5w8934ibHue20Vnd7M7J6C3-vQ5u3D96Jhg2-cJ5etHn8dMPOE74LA8HJlHLywpXZBNJySidlyMy8fu0BskSzG_s-NuFNILwSQBcTFIdfmh1y_KOx2uJ1zwiz-zI7XcGVOlq2jcikToy4k/s1600/logo-tlnovelastv.png" alt="" />
+    <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+  </header>
+
+  <!-- MENÚ LATERAL -->
+  <nav id="sideMenu" class="side-menu">
+    <a href="#">Inicio</a>
+    <a href="#">Descargar APK</a>
+    <a href="#">Contacto</a>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="container">
+    <h1>tlnovelas tv</h1>
+    <p style="font-size: 1rem; color: #fff;">
+  <i class="fas fa-tv"></i> <strong>tlnovelas tv</strong> es una app de streaming gratuita para <strong>Celulares, Tablet, Android TV o TV Box</strong> y más plataformas.  
+  <br>
+  <i class="fas fa-download"></i> Descárgala aquí y disfruta sin límites.  
+  <br>
+  <i class="fab fa-telegram-plane"></i> Únete a nuestra comunidad en Telegram.
+</p>
+
+
+    <div class="buttons">
+      <a href="#" class="btn"><i class="fas fa-desktop"></i> TV</a>
+      <a href="#" class="btn"><i class="fas fa-tablet-alt"></i> Tablet</a>
+      <a href="#" class="btn"><i class="fas fa-mobile-alt"></i> Celular</a>
+      <a href="https://t.me/tlnovelastv" class="btn telegram-btn" target="_blank">
+        <i class="fab fa-telegram-plane"></i> Únete a Telegram
+      </a>
+    </div>
+  </div>
+
+  <!-- IMAGEN DE DISPOSITIVOS -->
+  <div class="image-section">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjHiw4aABZoEznmb2oySjh3OjKIJKcnVA2pcGuqsAkcfyIDThW75jOEmHzhOlFXwjeQEAkgDTmNcTC46x89taU3OtysTiXia-RZps-4KszZqmvRZiI9vboWHZse0berozk9sA4ApCfFqsTc5ossESyZadydY8QjOJ6xsliKkSqOBjr_DByzty3_VS1nLSG1/s1600/mockup-tlnovelastv.png" alt="Dispositivos Magis TV" />
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("sideMenu").classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>
