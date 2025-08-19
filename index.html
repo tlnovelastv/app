@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>tlnovelas tv</title>
+  <title>TLNovelas TV – App Gratis de Streaming</title>
+  <meta name="description" content="TLNovelas TV es una app gratuita de streaming para celulares, tabletas, Android TV y más. Descárgala ahora y únete a nuestra comunidad en Telegram.">
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     :root {
@@ -40,6 +42,7 @@
 
     header img {
       height: 40px;
+      alt: "Logo TLNovelas TV";
     }
 
     .menu-icon {
@@ -48,8 +51,7 @@
       cursor: pointer;
     }
 
-    /* MENÚ LATERAL */
-    .side-menu {
+    nav.side-menu {
       position: fixed;
       top: 0;
       right: -250px;
@@ -64,11 +66,11 @@
       z-index: 9;
     }
 
-    .side-menu.active {
+    nav.side-menu.active {
       right: 0;
     }
 
-    .side-menu a {
+    nav.side-menu a {
       color: var(--color-blanco);
       text-decoration: none;
       margin: 15px 0;
@@ -77,22 +79,23 @@
       padding-bottom: 10px;
     }
 
-    .container {
+    main.container {
       padding: 20px;
       flex: 1;
+      max-width: 500px;
+      margin: auto;
     }
 
     h1 {
-      color: var(--color-blanco);
-      font-size: 1.8rem;
+      font-size: 2rem;
       margin-bottom: 15px;
     }
 
     p {
-      color: #f0f0f0;
       font-size: 1rem;
       line-height: 1.5;
       margin-bottom: 30px;
+      color: #f0f0f0;
     }
 
     .buttons {
@@ -108,7 +111,6 @@
       padding: 12px 20px;
       font-size: 1rem;
       border-radius: 30px;
-      text-align: center;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -122,7 +124,6 @@
       color: var(--color-primario);
     }
 
-    /* BOTÓN TELEGRAM ANIMADO */
     .telegram-btn {
       background-color: var(--color-blanco);
       color: var(--color-primario);
@@ -158,15 +159,15 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     }
 
-    .footer-wave {
-      width: 100%;
-      margin-top: auto;
-    }
-
     @media (min-width: 768px) {
-      .container {
-        max-width: 500px;
-        margin: auto;
+      .buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .btn {
+        flex: 1 1 45%;
       }
     }
   </style>
@@ -175,51 +176,36 @@
 
   <!-- HEADER -->
   <header>
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgUh1CXeYbYwQS5GylDrAouk-lRJ4ZaFLeXRUoUEADenuIU9W5w8934ibHue20Vnd7M7J6C3-vQ5u3D96Jhg2-cJ5etHn8dMPOE74LA8HJlHLywpXZBNJySidlyMy8fu0BskSzG_s-NuFNILwSQBcTFIdfmh1y_KOx2uJ1zwiz-zI7XcGVOlq2jcikToy4k/s1600/logo-tlnovelastv.png" alt="" />
-    <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgUh1CXeYbYwQS5GylDrAouk-lRJ4ZaFLeXRUoUEADenuIU9W5w8934ibHue20Vnd7M7J6C3-vQ5u3D96Jhg2-cJ5etHn8dMPOE74LA8HJlHLywpXZBNJySidlyMy8fu0BskSzG_s-NuFNILwSQBcTFIdfmh1y_KOx2uJ1zwiz-zI7XcGVOlq2jcikToy4k/s1600/logo-tlnovelastv.png" alt="Logo TLNovelas TV" />
+    <i class="fas fa-bars menu-icon" onclick="toggleMenu()" aria-label="Abrir menú"></i>
   </header>
 
   <!-- MENÚ LATERAL -->
-  <nav id="sideMenu" class="side-menu">
+  <nav id="sideMenu" class="side-menu" aria-label="Menú lateral">
     <a href="#">Inicio</a>
     <a href="#">Descargar APK</a>
     <a href="#">Contacto</a>
   </nav>
 
   <!-- CONTENIDO PRINCIPAL -->
-  <div class="container">
-    <h1>tlnovelas tv</h1>
-    <p style="font-size: 1rem; color: #fff;">
-  <i class="fas fa-tv"></i> <strong>tlnovelas tv</strong> es una app de streaming gratuita para <strong>Celulares, Tablet, Android TV o TV Box</strong> y más plataformas.  
-  <br>
-  <i class="fas fa-download"></i> Descárgala aquí y disfruta sin límites.  
-  <br>
-  <i class="fab fa-telegram-plane"></i> Únete a nuestra comunidad en Telegram.
-</p>
-
+  <main class="container">
+    <h1><i class="fas fa-tv"></i> TLNovelas TV</h1>
+    <p>
+      <strong>TLNovelas TV</strong> es una app de streaming gratuita para <strong>celulares, tabletas, Android TV o TV Box</strong> y más plataformas.
+      <br><i class="fas fa-download"></i> Descárgala aquí y disfruta sin límites.
+      <br><i class="fab fa-telegram-plane"></i> Únete a nuestra comunidad en Telegram.
+    </p>
 
     <div class="buttons">
       <a href="http://royertuestatci.com/codes/version-2.3.18.apk" class="btn"><i class="fas fa-desktop"></i> TV</a>
       <a href="http://royertuestatci.com/codes/version-2.3.18.apk" class="btn"><i class="fas fa-tablet-alt"></i> Tablet</a>
       <a href="http://royertuestatci.com/codes/version-2.3.18.apk" class="btn"><i class="fas fa-mobile-alt"></i> Celular</a>
-      <a href="https://t.me/tlnovelastv" class="btn telegram-btn" target="_blank">
+      <a href="https://t.me/tlnovelastv" class="btn telegram-btn" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-telegram-plane"></i> Únete a Telegram
       </a>
     </div>
-  </div>
+  </main>
 
   <!-- IMAGEN DE DISPOSITIVOS -->
-  <div class="image-section">
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjHiw4aABZoEznmb2oySjh3OjKIJKcnVA2pcGuqsAkcfyIDThW75jOEmHzhOlFXwjeQEAkgDTmNcTC46x89taU3OtysTiXia-RZps-4KszZqmvRZiI9vboWHZse0berozk9sA4ApCfFqsTc5ossESyZadydY8QjOJ6xsliKkSqOBjr_DByzty3_VS1nLSG1/s1600/mockup-tlnovelastv.png" alt="Dispositivos Magis TV" />
-  </div>
-
-  <!-- SCRIPT -->
-  <script>
-    function toggleMenu() {
-      document.getElementById("sideMenu").classList.toggle("active");
-    }
-  </script>
-
-</body>
-</html>
-
+  <section class="image-section">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjHiw4aABZoEznmb2oySjh3OjKIJKcnVA2pcGuqsAkcfyIDThW75jOEmHzhOlFXwjeQEAkgDTmNcTC46x89taU3
